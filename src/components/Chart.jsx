@@ -10,6 +10,7 @@ import {
 } from "recharts";
 
 const Chart = ({ sparklineData }) => {
+  console.log(sparklineData);
   const formattedData = sparklineData
     .map((price, idx) => {
       if (idx % 6 === 0) {
@@ -19,6 +20,7 @@ const Chart = ({ sparklineData }) => {
           .format("ddd h:mma");
         return { value: price, date };
       } else if (idx === sparklineData.length - 1) {
+        
         const date = moment().format("ddd h:mma");
         return { value: price, date };
       }

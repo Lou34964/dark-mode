@@ -4,10 +4,10 @@ export const useDarkMode = (key, initialValue) => {
     const [darkMode, setDarkMode] = useLocalStorage(key, initialValue);
 
     if (darkMode) {
-        document.body.classList.toggle("dark-mode");
+        window.document.body.classList.add("dark-mode");
     }
     else {
-        document.body.classList.remove("dark-mode")
+        window.document.body.classList.remove("dark-mode")
     }
 
     return [darkMode, setDarkMode];
